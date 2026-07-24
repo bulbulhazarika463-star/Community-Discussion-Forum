@@ -1,0 +1,143 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#eef2ff;
+}
+
+header{
+    background:#1e40af;
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 50px;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+
+header h2{
+    color:white;
+    font-size:36px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    border:2px solid white;
+    padding:10px 25px;
+    border-radius:30px;
+    font-size:16px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    background:white;
+    color:#1e40af;
+    transform:translateY(-4px);
+}
+
+.dashboard{
+    text-align:center;
+    margin-top:80px;
+}
+
+.dashboard h1{
+    font-size:55px;
+    color:#1e40af;
+    margin-bottom:25px;
+}
+
+.dashboard p{
+    font-size:22px;
+    color:#555;
+    margin-bottom:45px;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:320px;
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h2{
+    color:#1e40af;
+    margin-bottom:20px;
+    font-size:35px;
+}
+
+.card p{
+    font-size:20px;
+    color:#555;
+    margin-bottom:30px;
+}
+
+.card button{
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+    color:white;
+    border:none;
+    padding:12px 35px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(37,99,235,.4);
+}
+
+.card button:hover{
+    background:#1d4ed8;
+    transform:translateY(-4px);
+}
+
+@media(max-width:768px){
+
+    .cards{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    header{
+        flex-direction:column;
+        height:auto;
+        padding:20px;
+    }
+
+    nav{
+        margin-top:20px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .dashboard h1{
+        font-size:40px;
+    }
+
+    .dashboard p{
+        font-size:18px;
+    }
+
+}

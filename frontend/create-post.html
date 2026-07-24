@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post - Community Discussion Forum</title>
+
+    <link rel="stylesheet" href="css/post.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Community Discussion Forum</h1>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="create-post.html" class="active">Create Post</a>
+            <a href="discussions.html">Discussions</a>
+            <a href="profile.html">Profile</a>
+            <a href="index.html">Logout</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Create New Discussion</h2>
+        <p>Share your ideas, ask questions, and connect with the community.</p>
+    </section>
+
+    <!-- Create Post Form -->
+    <section class="container">
+
+        <div class="form-box">
+
+            <h2>Create Your Post</h2>
+
+            <form id="postForm">
+
+                <label>Discussion Title</label>
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Enter discussion title"
+                    required
+                >
+
+                <label>Category</label>
+
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option>Programming</option>
+                    <option>HTML</option>
+                    <option>CSS</option>
+                    <option>JavaScript</option>
+                    <option>General Discussion</option>
+                </select>
+
+                <label>Description</label>
+
+                <textarea
+                    id="content"
+                    rows="8"
+                    placeholder="Write your discussion here..."
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Publish Post
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- Tips -->
+        <div class="tips">
+
+            <h3>Posting Tips</h3>
+
+            <ul>
+                <li>Write a clear and meaningful title.</li>
+                <li>Select the correct category.</li>
+                <li>Explain your question or idea clearly.</li>
+                <li>Be respectful to other community members.</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Community Discussion Forum. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/post.js"></script>
+
+</body>
+</html>
