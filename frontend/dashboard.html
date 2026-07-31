@@ -2,73 +2,158 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Community Discussion Forum</title>
 
-    <link rel="stylesheet" href="css/dashboard.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | Community Discussion Forum</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
 </head>
 
 <body>
 
-    <header>
+<header>
 
-        <h2>Community Discussion Forum</h2>
+<div class="logo">
 
-        <nav>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="index.html">Logout</a>
-         </nav>
+<i class="fa-solid fa-comments"></i>
 
-    </header>
-
-    <div class="dashboard">
-
-        <h1>Welcome, <span id="userName">User</span>!</h1>
-
-        <p>
-            Welcome to your dashboard. Here you can create posts,
-            view discussions and manage your profile.
-        </p>
-
-        <div class="cards">
-
-            <div class="card">
-                <h2>Create Post</h2>
-                <p>Share your ideas with the community.</p>
-
-                <a href="create-post.html">
-                    <button>Create</button>
-                </a>
-
-            </div>
-            <div class="card">
-
-    <h2>Discussions</h2>
-
-    <p>View all discussion posts shared by users.</p>
-
-    <a href="discussions.html">
-        <button>Open</button>
-    </a>
+<h2>Community Discussion Forum</h2>
 
 </div>
 
-            <div class="card">
-                <h2>My Profile</h2>
-                <p>View and manage your profile.</p>
+<nav>
 
-                <a href="profile.html">
-                    <button>Open</button>
-                </a>
+<a href="dashboard.html">
+<i class="fa-solid fa-house"></i> Dashboard
+</a>
 
-            </div>
+<a href="profile.html">
+<i class="fa-solid fa-user"></i> Profile
+</a>
 
-        </div>
+<a href="index.html">
+<i class="fa-solid fa-right-from-bracket"></i> Logout
+</a>
 
-    </div>
+</nav>
 
-    <script src="js/dashboard.js"></script>
+</header>
+
+<section class="hero">
+
+<h1>Welcome, <span id="userName">User</span> 👋</h1>
+
+<p>
+Manage your discussions, create new posts and stay connected with the community.
+</p>
+
+</section>
+
+<section class="stats">
+
+<div class="stat-card">
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+<h2>25+</h2>
+
+<p>Posts</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-comments"></i>
+
+<h2>120+</h2>
+
+<p>Discussions</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-users"></i>
+
+<h2>500+</h2>
+
+<p>Members</p>
+
+</div>
+
+</section>
+
+<section class="cards">
+
+<div class="card">
+
+<i class="fa-solid fa-square-plus"></i>
+
+<h2>Create Post</h2>
+
+<p>Share your thoughts and ideas with the community.</p>
+
+<a href="create-post.html" class="btn">
+Create
+</a>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-comments"></i>
+
+<h2>Discussions</h2>
+
+<p>Read posts and interact with other members.</p>
+
+<a href="discussions.html" class="btn">
+Open
+</a>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-user"></i>
+
+<h2>My Profile</h2>
+
+<p>Manage your personal information.</p>
+
+<a href="profile.html" class="btn">
+Open
+</a>
+
+</div>
+
+</section>
+
+<section class="activity">
+
+<h2>Recent Activity</h2>
+
+<div class="activity-box">
+
+<p>📝 Create your first discussion.</p>
+
+<p>💬 Participate in community conversations.</p>
+
+<p>👤 Update your profile information.</p>
+
+</div>
+
+</section>
+
+<script src="js/dashboard.js"></script>
 
 </body>
 

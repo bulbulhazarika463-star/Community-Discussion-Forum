@@ -3,16 +3,17 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discussions | Community Discussion Forum</title>
 
-    <title>Discussions</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/discussions.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="css/discussions.css">
 
 </head>
 
@@ -20,103 +21,114 @@
 
 <header>
 
-    <h1>Community Discussion Forum</h1>
+<div class="logo">
 
-    <nav>
+<i class="fa-solid fa-comments"></i>
 
-        <a href="dashboard.html">Dashboard</a>
+<h2>Community Discussion Forum</h2>
 
-        <a href="create-post.html">Create Post</a>
+</div>
 
-        <a href="discussions.html" class="active">Discussions</a>
+<nav>
 
-        <a href="profile.html">Profile</a>
+<a href="dashboard.html">
+<i class="fa-solid fa-house"></i> Dashboard
+</a>
 
-        <a href="index.html">Logout</a>
+<a href="create-post.html">
+<i class="fa-solid fa-square-plus"></i> Create Post
+</a>
 
-    </nav>
+<a href="discussions.html" class="active">
+<i class="fa-solid fa-comments"></i> Discussions
+</a>
+
+<a href="profile.html">
+<i class="fa-solid fa-user"></i> Profile
+</a>
+
+<a href="index.html">
+<i class="fa-solid fa-right-from-bracket"></i> Logout
+</a>
+
+</nav>
 
 </header>
 
-
 <section class="hero">
 
-    <h2>
-        <i class="fa-solid fa-comments"></i>
-        Community Discussions
-    </h2>
+<h1>Community Discussions</h1>
 
-    <p>
-        Share your knowledge, ask questions, and connect with other members.
-    </p>
+<p>
+Explore ideas, ask questions and engage with other members.
+</p>
 
 </section>
-
 
 <section class="search-section">
 
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="Search discussions...">
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search discussions...">
+
+</div>
 
 </section>
-
-
-<section id="discussionContainer">
-
-    <!-- Posts will appear here -->
-
-</section>
-
 
 <section class="stats">
 
-    <div class="stat-card">
+<div class="stat-card">
 
-        <i class="fa-solid fa-file-lines"></i>
+<i class="fa-solid fa-file-lines"></i>
 
-        <h3 id="totalPosts">0</h3>
+<h2 id="totalPosts">0</h2>
 
-        <p>Posts</p>
+<p>Total Posts</p>
 
-    </div>
+</div>
 
-    <div class="stat-card">
+<div class="stat-card">
 
-        <i class="fa-solid fa-users"></i>
+<i class="fa-solid fa-users"></i>
 
-        <h3 id="totalMembers">0</h3>
+<h2>500+</h2>
 
-        <p>Members</p>
+<p>Community Members</p>
 
-    </div>
+</div>
 
-    <div class="stat-card">
+<div class="stat-card">
 
-        <i class="fa-solid fa-layer-group"></i>
+<i class="fa-solid fa-layer-group"></i>
 
-        <h3 id="totalCategories">0</h3>
+<h2 id="totalCategories">5</h2>
 
-        <p>Categories</p>
+<p>Categories</p>
 
-    </div>
+</div>
 
 </section>
 
+<section>
+
+<div id="discussionContainer" class="discussion-grid">
+
+</div>
+
+</section>
 
 <footer>
 
-    <p>
-
-        © 2026 Community Discussion Forum. All Rights Reserved.
-
-    </p>
+<p>© 2026 Community Discussion Forum</p>
 
 </footer>
 
 <script src="js/discussions.js"></script>
 
 </body>
-
 </html>

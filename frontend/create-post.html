@@ -1,100 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Post - Community Discussion Forum</title>
 
-    <link rel="stylesheet" href="css/post.css">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Create Post | Community Discussion Forum</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="css/post.css">
+
 </head>
+
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>Community Discussion Forum</h1>
+<header>
 
-        <nav>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="create-post.html" class="active">Create Post</a>
-            <a href="discussions.html">Discussions</a>
-            <a href="profile.html">Profile</a>
-            <a href="index.html">Logout</a>
-        </nav>
-    </header>
+<div class="logo">
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Create New Discussion</h2>
-        <p>Share your ideas, ask questions, and connect with the community.</p>
-    </section>
+<i class="fa-solid fa-comments"></i>
 
-    <!-- Create Post Form -->
-    <section class="container">
+<h2>Community Discussion Forum</h2>
 
-        <div class="form-box">
+</div>
 
-            <h2>Create Your Post</h2>
+<nav>
 
-            <form id="postForm">
+<a href="dashboard.html">
+<i class="fa-solid fa-house"></i> Dashboard
+</a>
 
-                <label>Discussion Title</label>
-                <input
-                    type="text"
-                    id="title"
-                    placeholder="Enter discussion title"
-                    required
-                >
+<a href="create-post.html" class="active">
+<i class="fa-solid fa-pen"></i> Create Post
+</a>
 
-                <label>Category</label>
+<a href="discussions.html">
+<i class="fa-solid fa-comments"></i> Discussions
+</a>
 
-                <select id="category" required>
-                    <option value="">Select Category</option>
-                    <option>Programming</option>
-                    <option>HTML</option>
-                    <option>CSS</option>
-                    <option>JavaScript</option>
-                    <option>General Discussion</option>
-                </select>
+<a href="profile.html">
+<i class="fa-solid fa-user"></i> Profile
+</a>
 
-                <label>Description</label>
+<a href="index.html">
+<i class="fa-solid fa-right-from-bracket"></i> Logout
+</a>
 
-                <textarea
-                    id="content"
-                    rows="8"
-                    placeholder="Write your discussion here..."
-                    required
-                ></textarea>
+</nav>
 
-                <button type="submit">
-                    Publish Post
-                </button>
+</header>
 
-            </form>
+<section class="hero">
 
-        </div>
+<h1>Create a New Discussion</h1>
 
-        <!-- Tips -->
-        <div class="tips">
+<p>
+Ask questions, share ideas and connect with the community.
+</p>
 
-            <h3>Posting Tips</h3>
+</section>
 
-            <ul>
-                <li>Write a clear and meaningful title.</li>
-                <li>Select the correct category.</li>
-                <li>Explain your question or idea clearly.</li>
-                <li>Be respectful to other community members.</li>
-            </ul>
+<section class="container">
 
-        </div>
+<div class="form-box">
 
-    </section>
+<h2>Create Your Post</h2>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Community Discussion Forum. All Rights Reserved.</p>
-    </footer>
+<form id="postForm">
 
-    <script src="js/post.js"></script>
+<label>Discussion Title</label>
+
+<div class="input-box">
+
+<i class="fa-solid fa-heading"></i>
+
+<input
+type="text"
+id="title"
+placeholder="Enter discussion title"
+required>
+
+</div>
+
+<label>Category</label>
+
+<div class="input-box">
+
+<i class="fa-solid fa-folder"></i>
+
+<select id="category" required>
+
+<option value="">Select Category</option>
+<option>Programming</option>
+<option>HTML</option>
+<option>CSS</option>
+<option>JavaScript</option>
+<option>General Discussion</option>
+
+</select>
+
+</div>
+
+<label>Description</label>
+
+<div class="textarea-box">
+
+<textarea
+id="content"
+rows="8"
+placeholder="Write your discussion here..."
+required></textarea>
+
+</div>
+
+<button type="submit">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Publish Discussion
+
+</button>
+
+</form>
+
+</div>
+
+<div class="tips">
+
+<h2>Writing Tips</h2>
+
+<div class="tip">
+
+<i class="fa-solid fa-lightbulb"></i>
+
+<p>Write a meaningful title.</p>
+
+</div>
+
+<div class="tip">
+
+<i class="fa-solid fa-folder-open"></i>
+
+<p>Select the correct category.</p>
+
+</div>
+
+<div class="tip">
+
+<i class="fa-solid fa-pen"></i>
+
+<p>Explain your question clearly.</p>
+
+</div>
+
+<div class="tip">
+
+<i class="fa-solid fa-heart"></i>
+
+<p>Be respectful to everyone.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Community Discussion Forum</p>
+
+</footer>
+
+<script src="js/post.js"></script>
 
 </body>
+
 </html>

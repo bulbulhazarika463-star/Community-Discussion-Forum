@@ -3,55 +3,147 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile | Community Discussion Forum</title>
 
-    <title>My Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/profile.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="css/profile.css">
 
 </head>
 
 <body>
 
-    <div class="profile-container">
+<header>
 
-        <div class="profile-icon">
-            <i class="fa-solid fa-user"></i>
-        </div>
+<div class="logo">
 
-        <h1>My Profile</h1>
+<i class="fa-solid fa-comments"></i>
 
-        <div class="profile-details">
+<h2>Community Discussion Forum</h2>
 
-            <p>
-                <strong>Name :</strong>
-                <span id="userName">Loading...</span>
-            </p>
+</div>
 
-            <p>
-                <strong>Email :</strong>
-                <span id="userEmail">Loading...</span>
-            </p>
+<nav>
 
-        </div>
+<a href="dashboard.html">
+<i class="fa-solid fa-house"></i> Dashboard
+</a>
 
-        <div class="buttons">
+<a href="create-post.html">
+<i class="fa-solid fa-pen"></i> Create Post
+</a>
 
-            <a href="dashboard.html">
-                <button type="button">Dashboard</button>
-            </a>
+<a href="discussions.html">
+<i class="fa-solid fa-comments"></i> Discussions
+</a>
 
-            <button type="button" id="logoutBtn">Logout</button>
+<a href="profile.html" class="active">
+<i class="fa-solid fa-user"></i> Profile
+</a>
 
-        </div>
+</nav>
 
-    </div>
+</header>
 
-    <script src="js/profile.js"></script>
+<section class="profile-container">
+
+<div class="profile-card">
+
+<div class="avatar">
+
+<i class="fa-solid fa-user"></i>
+
+</div>
+
+<h1>My Profile</h1>
+
+<p class="subtitle">
+Manage your account information
+</p>
+
+<div class="info">
+
+<div class="info-box">
+
+<i class="fa-solid fa-user"></i>
+
+<div>
+
+<h4>Full Name</h4>
+
+<p id="userName">Loading...</p>
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<i class="fa-solid fa-envelope"></i>
+
+<div>
+
+<h4>Email Address</h4>
+
+<p id="userEmail">Loading...</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="stats">
+
+<div>
+
+<h2>25</h2>
+
+<p>Posts</p>
+
+</div>
+
+<div>
+
+<h2>120</h2>
+
+<p>Discussions</p>
+
+</div>
+
+<div>
+
+<h2>2026</h2>
+
+<p>Joined</p>
+
+</div>
+
+</div>
+
+<div class="buttons">
+
+<a href="dashboard.html" class="btn">
+Dashboard
+</a>
+
+<button id="logoutBtn">
+Logout
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="js/profile.js"></script>
 
 </body>
 

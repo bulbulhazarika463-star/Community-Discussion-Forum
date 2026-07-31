@@ -1,41 +1,72 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const loginForm = document.getElementById("loginForm");
+    const message = document.getElementById("message");
 
-    loginForm.addEventListener("submit", function (event) {
+    loginForm.addEventListener("submit", async function (event) {
 
         event.preventDefault();
 
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value;
 
-        const message = document.getElementById("message");
-
-        const user = JSON.parse(localStorage.getItem("user"));
-
-        if (!user) {
+        if (email === "" || password === "") {
 
             message.style.color = "red";
-            message.textContent = "Please register first.";
+            message.textContent = "Please fill all fields.";
             return;
 
         }
 
-        if (email === user.email && password === user.password) {
+        try {
 
-            message.style.color = "green";
-            message.textContent = "Login Successful!";
+            const response = await fetch("http://localhost:5000/api/auth/login", {
 
-            setTimeout(function () {
+                method: "POST",
 
-                window.location.href = "dashboard.html";
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-            }, 1500);
+                body: JSON.stringify({
+                    email,
+                    password
+                })
 
-        } else {
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+
+                // Save JWT Token
+                localStorage.setItem("token", data.token);
+
+                // Save logged-in user
+                localStorage.setItem("currentUser", JSON.stringify(data.user));
+
+                message.style.color = "green";
+                message.textContent = "Login Successful!";
+
+                setTimeout(() => {
+
+                    window.location.href = "dashboard.html";
+
+                }, 1500);
+
+            } else {
+
+                message.style.color = "red";
+                message.textContent = data.message;
+
+            }
+
+        } catch (error) {
+
+            console.error(error);
 
             message.style.color = "red";
-            message.textContent = "Invalid Email or Password.";
+            message.textContent = "Server Error!";
 
         }
 

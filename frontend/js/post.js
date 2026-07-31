@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const postForm = document.getElementById("postForm");
 
-    postForm.addEventListener("submit", function (e) {
+    postForm.addEventListener("submit", async function (e) {
 
         e.preventDefault();
 
@@ -15,24 +15,59 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        const post = {
-            title: title,
-            category: category,
-            content: content,
-            date: new Date().toLocaleString()
-        };
+        const token = localStorage.getItem("token");
 
-        let posts = JSON.parse(localStorage.getItem("posts")) || [];
+        if (!token) {
+            alert("Please login first.");
+            window.location.href = "login.html";
+            return;
+        }
 
-        posts.push(post);
+        try {
 
-        localStorage.setItem("posts", JSON.stringify(posts));
+            const response = await fetch("http://localhost:5000/api/posts", {
 
-        alert("Post published successfully!");
+                method: "POST",
 
-        postForm.reset();
+                headers: {
 
-        window.location.href = "discussions.html";
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+
+                },
+
+                body: JSON.stringify({
+
+                    title,
+                    category,
+                    content
+
+                })
+
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+
+                alert("Post Published Successfully!");
+
+                postForm.reset();
+
+                window.location.href = "discussions.html";
+
+            } else {
+
+                alert(data.message || "Failed to publish post.");
+
+            }
+
+        } catch (error) {
+
+            console.error(error);
+            alert("Server Error!");
+
+        }
 
     });
 

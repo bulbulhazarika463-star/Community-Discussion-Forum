@@ -4,21 +4,49 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("searchInput");
 
     const totalPosts = document.getElementById("totalPosts");
-    const totalMembers = document.getElementById("totalMembers");
     const totalCategories = document.getElementById("totalCategories");
 
-    let posts = JSON.parse(localStorage.getItem("posts")) || [];
+    let posts = [];
 
-    updateStatistics();
-    displayPosts(posts);
+    async function loadPosts() {
+
+        try {
+
+            const response = await fetch("http://localhost:5000/api/posts");
+
+            const data = await response.json();
+
+            if (data.success) {
+
+                posts = data.posts;
+
+                updateStatistics();
+
+                displayPosts(posts);
+
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            discussionContainer.innerHTML = `
+                <div class="no-post">
+                    <h2>Unable to load posts</h2>
+                    <p>Please make sure the backend server is running.</p>
+                </div>
+            `;
+
+        }
+
+    }
 
     function updateStatistics() {
 
         totalPosts.textContent = posts.length;
 
-        totalMembers.textContent = 0;
-
         const categories = [...new Set(posts.map(post => post.category))];
+
         totalCategories.textContent = categories.length;
 
     }
@@ -35,14 +63,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p>Create your first discussion to get started.</p>
                 </div>
             `;
+
             return;
+
         }
 
         postList.forEach((post) => {
 
-            const originalIndex = posts.indexOf(post);
+            const date = new Date(post.createdAt).toLocaleString();
 
             const card = document.createElement("div");
+
             card.className = "post-card";
 
             card.innerHTML = `
@@ -57,14 +88,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="actions">
 
                     <span>
-                        <i class="fa-solid fa-calendar-days"></i>
-                        ${post.date}
+                        <i class="fa-solid fa-user"></i>
+                        ${post.author ? post.author.name : "Unknown"}
                     </span>
 
-                    <button class="delete-btn" onclick="deletePost(${originalIndex})">
-                        <i class="fa-solid fa-trash"></i>
-                        Delete
-                    </button>
+                    <span>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        ${date}
+                    </span>
 
                 </div>
             `;
@@ -75,44 +106,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    if (searchInput) {
+    searchInput.addEventListener("keyup", function () {
 
-        searchInput.addEventListener("keyup", function () {
+        const value = this.value.toLowerCase();
 
-            const value = this.value.toLowerCase().trim();
+        const filteredPosts = posts.filter(post =>
 
-            const filteredPosts = posts.filter(post =>
+            post.title.toLowerCase().includes(value) ||
 
-                post.title.toLowerCase().includes(value) ||
+            post.category.toLowerCase().includes(value) ||
 
-                post.category.toLowerCase().includes(value) ||
+            post.content.toLowerCase().includes(value)
 
-                post.content.toLowerCase().includes(value)
+        );
 
-            );
+        displayPosts(filteredPosts);
 
-            displayPosts(filteredPosts);
+    });
 
-        });
-
-    }
+    loadPosts();
 
 });
-
-function deletePost(index) {
-
-    if (confirm("Are you sure you want to delete this post?")) {
-
-        let posts = JSON.parse(localStorage.getItem("posts")) || [];
-
-        posts.splice(index, 1);
-
-        localStorage.setItem("posts", JSON.stringify(posts));
-
-        alert("Post deleted successfully!");
-
-        location.reload();
-
-    }
-
-}

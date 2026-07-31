@@ -6,45 +6,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register | Community Discussion Forum</title>
 
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
     <link rel="stylesheet" href="css/register.css">
 </head>
 
 <body>
 
-    <div class="container">
+<div class="register-container">
 
-        <h1>Create Account</h1>
-        <p class="subtitle">Join the Community Discussion Forum</p>
+    <!-- Left Panel -->
 
-        <form id="registerForm">
+    <div class="left-panel">
 
-            <input type="text" id="name" placeholder="Full Name" required>
+        <h1>Join Our Community</h1>
 
-            <input type="email" id="email" placeholder="Email Address" required>
-
-            <input type="password" id="password" placeholder="Password" required>
-
-            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
-
-            <button type="submit">Register</button>
-
-        </form>
-
-        <p id="message"></p>
-
-        <p class="login-link">
-            Already have an account?
-            <a href="login.html">Login</a>
+        <p>
+            Create your account and start sharing ideas,
+            asking questions, and connecting with students.
         </p>
 
-        <p class="home-link">
-            <a href="index.html">← Back to Home</a>
-        </p>
+       <div class="illustration">
+    <i class="fa-solid fa-user-plus"></i>
+</div>
 
     </div>
 
-    <script src="js/register.js"></script>
+    <!-- Right Panel -->
+
+    <div class="right-panel">
+
+        <div class="register-box">
+
+            <h2>Create Account</h2>
+
+            <p class="subtitle">
+                It's quick and easy
+            </p>
+
+            <form id="registerForm">
+
+                <div class="input-box">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="name" placeholder="Full Name" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+
+                <button type="submit">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Register
+                </button>
+
+            </form>
+
+            <p id="message"></p>
+
+            <div class="links">
+                <a href="login.html">Already have an account?</a>
+                <a href="index.html">Home</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/register.js"></script>
 
 </body>
-
 </html>
