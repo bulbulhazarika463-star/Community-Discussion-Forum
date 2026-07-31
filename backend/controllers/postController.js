@@ -1,8 +1,5 @@
 const Post = require("../models/Post");
 
-// ==========================
-// Create Post
-// ==========================
 exports.createPost = async (req, res) => {
 
     try {
