@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         try {
 
-            const response = await fetch("http://localhost:5000/api/posts", {
+            const baseUrl = window.API_BASE_URL || "http://localhost:5000/api";
+            const response = await fetch(`${baseUrl}/posts`, {
 
                 method: "POST",
 
